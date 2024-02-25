@@ -10,7 +10,7 @@ local placedBlocks = {} -- Table to store references to placed blocks
 local boxSizeY = 3000
 local boxSizeX = 3000
 local rayCount = 50
-local rayDelay = 0.005 -- in mins ex 0.03 = 3 sec
+local rayDelay = 0.001 -- in mins ex 0.03 = 3 sec
 local bloomSize = 20
 local blockSize = .15
 
@@ -95,6 +95,8 @@ local function placeBlocks()
 			-- Add the placed block to the list
 			table.insert(placedBlocks, part)
 		end
+
+		wait(rayDelay)
 	end
 
 	scanning = false
